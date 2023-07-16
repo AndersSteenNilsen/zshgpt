@@ -15,7 +15,7 @@
 Heavily inspired by the abandoned project [https://github.com/microsoft/Codex-CLI](https://github.com/microsoft/Codex-CLI)
 Made into a oh-my-zsh plugin.
 
-In your zsh console, type a question and get answer.
+In your zsh console, type a question, starting with comment sign `#`, hit `ctrl+g` and get an answer.
 ```bash
 # Who edited README.MD last according to git history?
 ```
@@ -23,7 +23,7 @@ ChatGPT will then answer with e.g.:
 ```bash
 git log -1 --format="%an" README.md
 ```
-Hit **enter** to execute or **ctrl+c** to deny.
+Hit `enter` to execute or `ctrl+c` to deny.
 
 If asked a question that will not resolve in a command, GPT is instructed to use `#`.
 
@@ -31,6 +31,12 @@ If asked a question that will not resolve in a command, GPT is instructed to use
 # Who was Norways first prime minister?
 # Norway's first prime minister was Frederik Stang, serving from 1873 to 1880.
 ``` 
+
+## Prerequisite
+* Python >= 3.7
+* Valid Openai API-key
+    * make sure to save under `OPENAI_API_KEY` env.
+    * `export OPENAI_API_KEY='sk-...'`
 
 ## Installation
 
