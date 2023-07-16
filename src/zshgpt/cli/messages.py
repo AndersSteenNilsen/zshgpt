@@ -3,7 +3,7 @@ messages = [
         'role': 'system',
         'content': 'You are a zsh terminal assistant. '
         'Complete the textual query of the '
-        'user with a valid zsh command or a textual reply as a comment.',
+        'user with a valid zsh command or a textual reply as a comment starting with #.',
     },
     {'role': 'user', 'content': '# Can you say hello?'},
     {'role': 'assistant', 'content': '# Hello!'},
@@ -36,7 +36,10 @@ messages = [
     {'role': 'user', 'content': '# Tell me a joke'},
     {
         'role': 'assistant',
-        'content': "# Sure, here's a joke for you: Why did the tomato turn red? Because it saw the salad dressing!",
+        'content':
+"""# Sure, here's a joke for you: Why did the tomato turn red?
+
+Because it saw the salad dressing!""",
     },
     {'role': 'user', 'content': '# Another one, but multiple lines'},
     {
@@ -52,7 +55,5 @@ messages = [
 # Why don't scientists trust atoms?
 # Because they make up everything.
 
-# I hope you enjoyed the jokes!
-""",
-    },
+# I hope you enjoyed the jokes!""",},
 ]
