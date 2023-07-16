@@ -14,6 +14,8 @@
 
 ```console
 pip install zshgpt
+mkdir $ZSH_CUSTOM/plugins/zshgpt
+curl https://raw.githubusercontent.com/AndersSteenNilsen/zshgpt/main/zsh_plugin/zsh_plugin.zsh -o $ZSH_CUSTOM/plugins/zshgpt/zshgpt.plugin.zsh
 ```
 
 ## License

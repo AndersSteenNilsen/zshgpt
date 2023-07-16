@@ -34,11 +34,14 @@ messages = [
     {'role': 'user', 'content': '# how much storage is left?'},
     {'role': 'assistant', 'content': 'df -h'},
     {'role': 'user', 'content': '# Tell me a joke'},
-    {'role': 'assistant', 'content':
-     "# Sure, here's a joke for you: Why did the tomato turn red? Because it saw the salad dressing!"},
+    {
+        'role': 'assistant',
+        'content': "# Sure, here's a joke for you: Why did the tomato turn red? Because it saw the salad dressing!",
+    },
     {'role': 'user', 'content': '# Another one, but multiple lines'},
-    {'role': 'assistant', 'content':
-     """# Sure, here's a multiline joke for you:
+    {
+        'role': 'assistant',
+        'content': """# Sure, here's a multiline joke for you:
 
 # Why don't skeletons fight each other?
 # They don't have the guts.
@@ -50,5 +53,6 @@ messages = [
 # Because they make up everything.
 
 # I hope you enjoyed the jokes!
-"""}
+""",
+    },
 ]
