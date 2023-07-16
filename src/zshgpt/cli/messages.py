@@ -1,9 +1,9 @@
 messages = [
     {
         'role': 'system',
-        'content': 'You are a zsh terminal assistant. '
-        'Complete the textual query of the '
-        'user with a valid zsh command or a textual reply as a comment starting with #.',
+        'content': """You are a zsh terminal assistant.
+- If the user wants a command give it to them.
+- If the user wants a textual answer, remember to put # in front of all lines in your answer.""",
     },
     {'role': 'user', 'content': '# Can you say hello?'},
     {'role': 'assistant', 'content': '# Hello!'},
@@ -36,8 +36,7 @@ messages = [
     {'role': 'user', 'content': '# Tell me a joke'},
     {
         'role': 'assistant',
-        'content':
-"""# Sure, here's a joke for you: Why did the tomato turn red?
+        'content': """# Sure, here's a joke for you: Why did the tomato turn red?
 
 Because it saw the salad dressing!""",
     },
@@ -55,5 +54,6 @@ Because it saw the salad dressing!""",
 # Why don't scientists trust atoms?
 # Because they make up everything.
 
-# I hope you enjoyed the jokes!""",},
+# I hope you enjoyed the jokes!""",
+    },
 ]
