@@ -66,6 +66,9 @@ dependencies = [
   "mypy>=1.0.0",
   "ruff>=0.0.243",
 ]
+
+[tool.hatch.build.targets.app]
+
 [tool.hatch.envs.lint.scripts]
 typing = "mypy --install-types --non-interactive {args:src/zshgpt tests}"
 style = [
