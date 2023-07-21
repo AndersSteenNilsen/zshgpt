@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
@@ -37,7 +37,8 @@ Source = "https://github.com/unknown/zshgpt"
 zshgpt = "zshgpt.cli:zshgpt"
 
 [tool.hatch.version]
-path = "src/zshgpt/__about__.py"
+source = "vcs"
+#path = "src/zshgpt/__about__.py"
 
 [tool.hatch.envs.default]
 dependencies = [
@@ -68,6 +69,9 @@ dependencies = [
 ]
 
 [tool.hatch.build.targets.app]
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/zshgpt/__about__.py"
 
 [tool.hatch.envs.lint.scripts]
 typing = "mypy --install-types --non-interactive {args:src/zshgpt tests}"
