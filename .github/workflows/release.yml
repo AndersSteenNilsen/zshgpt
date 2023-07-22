@@ -38,10 +38,10 @@ jobs:
           git config user.email github-actions@github.com
           git commit -am "Automatic minor version bump"
           git push
-    
+
     - name: build
       run: hatch build
-    
+
     - name: publish
       env:
         HATCH_INDEX_USER: __token__

@@ -34,7 +34,7 @@ If asked a question that will not resolve in a command, GPT is instructed to use
 ```bash
 # Who was Norways first prime minister?
 # Norway's first prime minister was Frederik Stang, serving from 1873 to 1880.
-``` 
+```
 
 ## Prerequisite
 * Python >= 3.7

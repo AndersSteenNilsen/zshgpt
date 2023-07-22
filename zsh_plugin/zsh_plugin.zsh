@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# This ZSH plugin reads the text from the current buffer 
+# This ZSH plugin reads the text from the current buffer
 # and uses a Python script to complete the text.
 
 create_completion() {
