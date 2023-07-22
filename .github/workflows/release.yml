@@ -1,0 +1,31 @@
+name: release
+on:
+  push:
+    branches:
+      - 'main'
+      - 'releases/**'
+
+jobs:
+  run:
+    name: Bump and release
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    - name: Install Hatch
+      run: pip install --upgrade hatch
+
+    - name: Bump version
+      run: hatch version minor
+    
+    - name: build
+      run: hatch build
+    
+    - name: release
+      run: hatch release

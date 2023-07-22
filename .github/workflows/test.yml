@@ -1,10 +1,9 @@
 name: test
 
 on:
-  push:
-    branches: [main, master]
   pull_request:
-    branches: [main, master]
+    types:
+      - opened
 
 concurrency:
   group: test-${{ github.head_ref }}
