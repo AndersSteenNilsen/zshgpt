@@ -1,9 +1,6 @@
 # SPDX-FileCopyrightText: 2023-present Anders Steen <asteennilsen@gmail.com
 #
 # SPDX-License-Identifier: MIT
-import os
-import shutil
-
 import click
 import openai
 

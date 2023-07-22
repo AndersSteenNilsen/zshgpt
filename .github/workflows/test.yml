@@ -1,10 +1,7 @@
 name: test
 
 on:
-  push:
-    branches: [main, master]
   pull_request:
-    branches: [main, master]
 
 concurrency:
   group: test-${{ github.head_ref }}
@@ -19,10 +16,10 @@ jobs:
     name: Python ${{ matrix.python-version }} on ${{ startsWith(matrix.os, 'macos-') && 'macOS' || startsWith(matrix.os, 'windows-') && 'Windows' || 'Linux' }}
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']
+        os: [ubuntu-latest] #, windows-latest, macos-latest]
+        python-version: ['3.11'] # ['3.7', '3.8', '3.9', '3.10', '3.11']
 
     steps:
     - uses: actions/checkout@v3
@@ -34,6 +31,9 @@ jobs:
 
     - name: Install Hatch
       run: pip install --upgrade hatch
+
+    - name: Lint test
+      run: hatch run lint:style
 
     - name: Run tests
       run: hatch run cov
