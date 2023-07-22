@@ -12,4 +12,3 @@ Lets say current version is 1.2.3
     2. Git tag with current version
     3. Publish to pypi
     4. merge
-
