@@ -26,8 +26,8 @@ jobs:
 
     - name: Commit version bumb
       run: |
-          git config --global user.name 'GH actions'
-          git config --global user.email 'githubaction@github.com'
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git commit -am "Automatic minor version bump"
           git push
     
