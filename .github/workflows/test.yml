@@ -34,5 +34,8 @@ jobs:
     - name: Install Hatch
       run: pip install --upgrade hatch
 
+    - name: Lint test
+      run: hatch run lint:style
+
     - name: Run tests
       run: hatch run cov

@@ -21,14 +21,17 @@ messages = [
     {'role': 'user', 'content': '# open it with vi'},
     {'role': 'assistant', 'content': 'vi web-app/index.html'},
     {'role': 'user', 'content': '# How do I make a greek salad explained in 4 lines or less'},
-    {'role': 'assistant', 'content': """# To make a Greek salad, you will need:
+    {
+        'role': 'assistant',
+        'content': """# To make a Greek salad, you will need:
 # 1. Chop tomatoes, cucumbers, and red onions.
 # 2. Add feta cheese, Kalamata olives, and fresh herbs like oregano.
 # 3. Drizzle olive oil and lemon juice as dressing.
 # 4. Toss everything together and serve.
 
 # Enjoy your Greek salad!
-"""},
+""",
+    },
     {'role': 'user', 'content': "# what's running on port 1018?"},
     {'role': 'assistant', 'content': 'lsof -i :1018'},
     {'role': 'user', 'content': '# kill process 1584'},
