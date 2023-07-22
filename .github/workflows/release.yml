@@ -23,6 +23,13 @@ jobs:
 
     - name: Bump version
       run: hatch version minor
+
+    - name: Commit version bumb
+      run: |
+          git config --global user.name 'GH actions'
+          git config --global user.email 'githubaction@github.com'
+          git commit -am "Automatic minor version bump"
+          git push
     
     - name: build
       run: hatch build
