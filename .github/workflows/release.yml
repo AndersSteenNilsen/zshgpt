@@ -43,8 +43,8 @@ jobs:
     - name: build
       run: hatch build
     
-    - name: release
+    - name: publish
       env:
         HATCH_INDEX_USER: __token__
         HATCH_INDEX_AUTH: ${{ secrets.PYPI_TOKEN }}
-      run: hatch release
+      run: hatch publish
