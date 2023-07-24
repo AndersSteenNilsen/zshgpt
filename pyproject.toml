@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
@@ -59,7 +59,11 @@ python = ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
 
 [tool.hatch.version]
-path = "src/zshgpt/__about__.py"
+# path = "src/zshgpt/__about__.py"
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/zshgpt/__about__.py"
 
 [tool.hatch.build.targets.app]
 

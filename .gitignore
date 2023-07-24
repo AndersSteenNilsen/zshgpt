@@ -1,10 +1,14 @@
-.ruff_cache/
+#Editor settings
 .vscode/
+
+#Autgenerated __about__ file
+src/zshgpt/__about__.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+.ruff_cache/
 
 # C extensions
 *.so
