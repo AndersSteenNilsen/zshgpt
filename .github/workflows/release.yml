@@ -16,7 +16,7 @@ env:
 
 jobs:
   run:
-    name: Bump and release
+    name: Build and release.
     runs-on: ubuntu-latest
 
     steps:
@@ -33,7 +33,7 @@ jobs:
     - name: build
       run: hatch build
 
-    - name: publish-dummy
+    - name: publish to pypi
       env:
         HATCH_INDEX_USER: __token__
         HATCH_INDEX_AUTH: ${{ secrets.PYPI_TOKEN }}
