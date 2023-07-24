@@ -28,6 +28,7 @@ jobs:
 
 
   release:
+    needs: bump
     name: Build and release to PYPI.
     runs-on: ubuntu-latest
 
