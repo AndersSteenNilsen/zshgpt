@@ -3,6 +3,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/zshgpt.svg)](https://pypi.org/project/zshgpt)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/zshgpt.svg)](https://pypi.org/project/zshgpt)
 
+![Icon](icon.png)
 -----
 
 **Table of Contents**
@@ -38,7 +39,7 @@ If asked a question that will not resolve in a command, GPT is instructed to use
 
 ## Prerequisite
 ### Must have
-* Python >= 3.7
+* Python >= 3.8
 * ZSH + Oh-my-zsh
 * Valid Openai API-key
     * make sure to save under `OPENAI_API_KEY` env.
