@@ -28,9 +28,9 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/unknown/zshgpt#readme"
-Issues = "https://github.com/unknown/zshgpt/issues"
-Source = "https://github.com/unknown/zshgpt"
+Documentation = "https://github.com/AndersSteenNilsen/zshgpt#readme"
+Issues = "https://github.com/AndersSteenNilsen/zshgpt/issues"
+Source = "https://github.com/AndersSteenNilsen/zshgpt"
 
 [project.scripts]
 zshgpt = "zshgpt.cli:zshgpt"

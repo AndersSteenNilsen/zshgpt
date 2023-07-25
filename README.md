@@ -3,6 +3,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/zshgpt.svg)](https://pypi.org/project/zshgpt)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/zshgpt.svg)](https://pypi.org/project/zshgpt)
 
+![Icon](icon.png)
 -----
 
 **Table of Contents**
