@@ -37,17 +37,38 @@ If asked a question that will not resolve in a command, GPT is instructed to use
 ```
 
 ## Prerequisite
+### Must have
 * Python >= 3.7
 * ZSH + Oh-my-zsh
 * Valid Openai API-key
     * make sure to save under `OPENAI_API_KEY` env.
-    * `export OPENAI_API_KEY='sk-...'`
+    * **`export OPENAI_API_KEY='sk-...'`**
+
+### Nice to have
+* pipx
+* Oh-my-zsh
+* zplug
 
 ## Installation
+⚠️All installations needs to have OPEN_API_KEY set⚠️.
 
-With zshgpt alone, you can ask questions with `zshgpt # Show me all my drives` and it will return an answer from GPT. But the true performance boost comes when you also add the zsh plugin.
-```bash
-pip install zshgpt # Or preferably install with pipx
+`~/.zshrc`
+```
+export OPEN_API_KEY="sk-..."
+```
+
+### Standalone python package
+With zshgpt alone `pipx install zshgpt` , you can ask questions with `zshgpt # Show me all my drives` and it will return an answer from GPT. But the true ✨magic✨ comes when you also add the zsh plugin.
+
+### Manually with zsh
+```zsh
+curl https://raw.githubusercontent.com/AndersSteenNilsen/zshgpt/main/zshgpt.plugin.zsh -o ~ # Copy plugin
+echo "source ~/zshgpt.plugin.zsh" >> ~/.zshrc # Add to zshrc
+exec zsh # Reload zsh
+```
+
+### Manually with oh-my-zsh
+```zsh
 mkdir $ZSH_CUSTOM/plugins/zshgpt
 curl https://raw.githubusercontent.com/AndersSteenNilsen/zshgpt/main/zsh_plugin/zsh_plugin.zsh -o $ZSH_CUSTOM/plugins/zshgpt/zshgpt.plugin.zsh
 ```
@@ -59,6 +80,18 @@ plugins(
     zshgpt
     ...
 )
+```
+
+```zsh
+omz reload
+```
+
+### With zplug
+`~/.zshrc`
+```
+...
+zplug "AndersSteenNilsen/zshgpt"
+zplug load
 ```
 
 ## Future plans
