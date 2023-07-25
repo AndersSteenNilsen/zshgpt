@@ -38,7 +38,7 @@ If asked a question that will not resolve in a command, GPT is instructed to use
 
 ## Prerequisite
 ### Must have
-* Python >= 3.7
+* Python >= 3.8
 * ZSH + Oh-my-zsh
 * Valid Openai API-key
     * make sure to save under `OPENAI_API_KEY` env.
