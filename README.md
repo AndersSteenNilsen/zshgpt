@@ -1,16 +1,14 @@
-# zshgpt
 
 [![PyPI - Version](https://img.shields.io/pypi/v/zshgpt.svg)](https://pypi.org/project/zshgpt)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/zshgpt.svg)](https://pypi.org/project/zshgpt)
+# zshgpt
 
-![Icon](icon.png)
 -----
 
 **Table of Contents**
 
 - [About](#about)
 - [Installation](#installation)
-- [Prerequisite](#prerequisite)
 - [Future plans](#future-plans)
 - [License](#license)
 
@@ -37,11 +35,15 @@ If asked a question that will not resolve in a command, GPT is instructed to use
 # Norway's first prime minister was Frederik Stang, serving from 1873 to 1880.
 ```
 
+## LOGO
+*Made with DALL-E*
+
+![Icon](icon.png)
 ## Prerequisite
 ### Must have
 * Python >= 3.8
 * ZSH + Oh-my-zsh
-* Valid Openai API-key
+* ⚠️ Valid Openai API-key
     * make sure to save under `OPENAI_API_KEY` env.
     * **`export OPENAI_API_KEY='sk-...'`**
 
@@ -51,12 +53,6 @@ If asked a question that will not resolve in a command, GPT is instructed to use
 * zplug
 
 ## Installation
-⚠️All installations needs to have OPEN_API_KEY set⚠️.
-
-`~/.zshrc`
-```
-export OPEN_API_KEY="sk-..."
-```
 
 ### Standalone python package
 With zshgpt alone `pipx install zshgpt` , you can ask questions with `zshgpt # Show me all my drives` and it will return an answer from GPT. But the true ✨magic✨ comes when you also add the zsh plugin.
