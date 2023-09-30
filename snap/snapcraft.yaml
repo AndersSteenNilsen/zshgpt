@@ -6,7 +6,8 @@ confinement: strict
 base: core22
 adopt-info: zshgpt
 architectures:
-  - build-on: [arm64, armhf, amd64]
+  - build-on: [amd64]
+    build-for: [all]
 
 apps:
   zshgpt:
@@ -17,6 +18,7 @@ parts:
   zshgpt:
     plugin: python
     python-packages: [zshgpt]
+    source: .
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0 | cut -c 2-)
