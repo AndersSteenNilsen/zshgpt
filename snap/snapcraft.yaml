@@ -5,6 +5,7 @@ version: git
 grade: stable
 confinement: devmode
 base: core20
+adopt-info: zshgpt
 architectures:
   - build-on: [arm64, armhf, amd64]
 
@@ -17,3 +18,6 @@ parts:
   zshgpt:
     plugin: python
     python-packages: [zshgpt]
+    override-pull: |
+      snapcraftctl pull
+      git describe --tag | snapcraftctl set-version
