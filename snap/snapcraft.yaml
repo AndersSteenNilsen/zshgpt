@@ -1,7 +1,6 @@
 name: zshgpt
 summary: Power up your zsh with gpt
 description: Power up your zsh with gpt.
-version: git
 grade: stable
 confinement: devmode
 base: core20
@@ -20,4 +19,5 @@ parts:
     python-packages: [zshgpt]
     override-pull: |
       snapcraftctl pull
-      git describe --tag | snapcraftctl set-version
+      git -C /root/project describe --tags
+      snapcraftctl set-version $(git -C /root/project describe --tags)
