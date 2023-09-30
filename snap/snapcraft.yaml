@@ -2,8 +2,8 @@ name: zshgpt
 summary: Power up your zsh with gpt
 description: Power up your zsh with gpt.
 grade: stable
-confinement: devmode
-base: core20
+confinement: strict
+base: core22
 adopt-info: zshgpt
 architectures:
   - build-on: [arm64, armhf, amd64]
@@ -18,6 +18,5 @@ parts:
     plugin: python
     python-packages: [zshgpt]
     override-pull: |
-      snapcraftctl pull
-      git -C /root/project describe --tags
-      snapcraftctl set-version $(git -C /root/project describe --tags)
+      craftctl default
+      craftctl set version=$(git describe --tags --abbrev=0 | cut -c 2-)
