@@ -1,6 +1,7 @@
 
 [![PyPI - Version](https://img.shields.io/pypi/v/zshgpt.svg)](https://pypi.org/project/zshgpt)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/zshgpt.svg)](https://pypi.org/project/zshgpt)
+[![zshgpt](https://snapcraft.io/zshgpt/badge.svg)](https://snapcraft.io/zshgpt)
 # zshgpt
 
 -----
@@ -40,31 +41,42 @@ If asked a question that will not resolve in a command, GPT is instructed to use
 
 ![Icon](icon.png)
 ## Prerequisite
-### Must have
-* Python >= 3.8
-* ZSH + Oh-my-zsh
 * ⚠️ Valid Openai API-key
     * make sure to save under `OPENAI_API_KEY` env.
     * **`export OPENAI_API_KEY='sk-...'`**
 
 ### Nice to have
+* Python
 * pipx
 * Oh-my-zsh
 * zplug
 
-## Installation
+## Installation standalone package
+With zshgpt alone, you can ask questions with:
+```sh
+zshgpt "# Show me all my drives"
+```
+and it will return an answer from GPT. But the true ✨magic✨ comes when you also add the zsh plugin.
+### Snap
+```sh
+sudo snap install zshgpt --edge
+```
 
-### Standalone python package
-With zshgpt alone `pipx install zshgpt` , you can ask questions with `zshgpt # Show me all my drives` and it will return an answer from GPT. But the true ✨magic✨ comes when you also add the zsh plugin.
+### pipx
+```sh
+pipx install zshgpt
+```
 
-### Manually with zsh
+# Install the plugin
+The plugin consists of just a small script linking `<C-g>` to `zshgpt` and does some buffer tricks such taht you can just hit `enter` and don't have to copy paste the command.
+### zsh
 ```zsh
 curl https://raw.githubusercontent.com/AndersSteenNilsen/zshgpt/main/zshgpt.plugin.zsh -o ~ # Copy plugin
 echo "source ~/zshgpt.plugin.zsh" >> ~/.zshrc # Add to zshrc
 exec zsh # Reload zsh
 ```
 
-### Manually with oh-my-zsh
+### oh-my-zsh
 ```zsh
 mkdir $ZSH_CUSTOM/plugins/zshgpt
 curl https://raw.githubusercontent.com/AndersSteenNilsen/zshgpt/main/zsh_plugin/zsh_plugin.zsh -o $ZSH_CUSTOM/plugins/zshgpt/zshgpt.plugin.zsh
@@ -83,7 +95,7 @@ plugins(
 omz reload
 ```
 
-### With zplug
+### zplug
 `~/.zshrc`
 ```
 ...
