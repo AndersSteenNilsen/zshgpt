@@ -5,7 +5,7 @@ grade: stable
 confinement: strict
 base: core22
 adopt-info: zshgpt
-license: MIT License
+license: MIT
 icon: icon.png
 source-code: https://github.com/AndersSteenNilsen/zshgpt
 architectures:
