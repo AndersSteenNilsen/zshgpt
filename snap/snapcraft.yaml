@@ -12,7 +12,7 @@ architectures:
 apps:
   zshgpt:
     command: bin/zshgpt
-    plugs: [home, network, network-bind, removable-media]
+    plugs: [network]
 
 parts:
   zshgpt:
