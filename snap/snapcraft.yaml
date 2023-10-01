@@ -7,7 +7,7 @@ base: core22
 adopt-info: zshgpt
 architectures:
   - build-on: [amd64]
-    build-for: [all]
+    build-for: [amd64]
 
 apps:
   zshgpt:
