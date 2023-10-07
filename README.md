@@ -1,6 +1,8 @@
 
 [![PyPI - Version](https://img.shields.io/pypi/v/zshgpt.svg)](https://pypi.org/project/zshgpt)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/zshgpt.svg)](https://pypi.org/project/zshgpt)
+[![zshgpt](https://snapcraft.io/zshgpt/badge.svg)](https://snapcraft.io/zshgpt)
+
 # zshgpt
 
 -----
@@ -67,7 +69,7 @@ exec zsh # Reload zsh
 ### Manually with oh-my-zsh
 ```zsh
 mkdir $ZSH_CUSTOM/plugins/zshgpt
-curl https://raw.githubusercontent.com/AndersSteenNilsen/zshgpt/main/zsh_plugin/zsh_plugin.zsh -o $ZSH_CUSTOM/plugins/zshgpt/zshgpt.plugin.zsh
+curl https://raw.githubusercontent.com/AndersSteenNilsen/zshgpt/main/zsh_plugin.zsh -o $ZSH_CUSTOM/plugins/zshgpt/zshgpt.plugin.zsh
 ```
 Then add zshgpt in your list of plugins in `~/.zshrc`
 
