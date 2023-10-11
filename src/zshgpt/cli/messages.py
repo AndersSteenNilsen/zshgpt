@@ -9,8 +9,12 @@ messages = [
 - You are allowed to explain what the command does as long as you put '#' in front of the explenation lines
 """,
     },
-    {'role': 'user', 'content': '# Can you say hello?'},
-    {'role': 'assistant', 'content': '# Hello!'},
+    {'role': 'user', 'content': '# login to git with user.name=martha-nielsen user.email=martha.nielsen@gmail.com'},
+    {
+        'role': 'assistant',
+        'content': '''git config --global user.name "martha-nielsen"
+git config --global user.email "martha.nielsen@gmail.com"''',
+    },
     {'role': 'user', 'content': '# what processes are hogging the most cpu?'},
     {'role': 'assistant', 'content': 'ps aux | sort -nrk 3,3 | head -n 10.'},
     {'role': 'user', 'content': '# add a hello world website to the index'},
