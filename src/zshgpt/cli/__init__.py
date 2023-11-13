@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2023-present Anders Steen <asteennilsen@gmail.com
 #
 # SPDX-License-Identifier: MIT
+import time
+
 import click
 import openai
 from openai.error import AuthenticationError
@@ -15,8 +17,12 @@ from zshgpt.cli.messages import messages
 def zshgpt(user_query: str) -> str:
     try:
         response = openai.ChatCompletion.create(
-            model='gpt-3.5-turbo', messages=[*messages, {'role': 'user', 'content': user_query}]
+            model='gpt-3.5-turbo', messages=[*messages, {'role': 'user', 'content': user_query}], stream=True
         )
     except AuthenticationError as auth_error:
         raise click.ClickException(auth_error.user_message) from auth_error
-    click.echo(response['choices'][0]['message']['content'], nl=False)
+    for chunk in response:
+        if 'content' not in chunk['choices'][0]['delta']:
+            return
+        click.echo(chunk['choices'][0]['delta']['content'], nl=False)
+        time.sleep(0.2)
