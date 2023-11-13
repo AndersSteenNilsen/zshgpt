@@ -2,11 +2,11 @@
 #
 # SPDX-License-Identifier: MIT
 import click
-import openai
-from openai.error import AuthenticationError
+from openai import AuthenticationError
 
 from zshgpt.__about__ import __version__
 from zshgpt.cli.messages import messages
+from zshgpt.util.client import client
 
 
 @click.group(context_settings={'help_option_names': ['-h', '--help']}, invoke_without_command=True)
@@ -14,7 +14,7 @@ from zshgpt.cli.messages import messages
 @click.argument('user_query')
 def zshgpt(user_query: str) -> str:
     try:
-        response = openai.ChatCompletion.create(
+        response = client.ChatCompletion.create(
             model='gpt-3.5-turbo', messages=[*messages, {'role': 'user', 'content': user_query}]
         )
     except AuthenticationError as auth_error:

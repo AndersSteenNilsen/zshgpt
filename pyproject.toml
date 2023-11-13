@@ -27,7 +27,9 @@ classifiers = [
   "Topic :: Utilities"
 ]
 dependencies = [
-  "click", "openai"
+  "click",
+  "openai~=1.2.4",
+  "pydantic-settings"
 ]
 
 [project.urls]

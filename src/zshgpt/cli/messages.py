@@ -1,14 +1,4 @@
 messages = [
-    {
-        'role': 'system',
-        'content': """You are a zsh terminal assistant.
-- Assume the user is on a Linux or macOS machine.
-- Your answer is meant to be run in the zsh terminal.
-- If the user is looking for a command, return a runnable command.
-- If the user wants a textual answer, remember to put '#' in front of all lines that should not run.
-- You are allowed to explain what the command does as long as you put '#' in front of the explenation lines
-""",
-    },
     {'role': 'user', 'content': '# login to git with user.name=martha-nielsen user.email=martha.nielsen@gmail.com'},
     {
         'role': 'assistant',
