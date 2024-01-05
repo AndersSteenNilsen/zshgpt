@@ -1,3 +1,3 @@
-from openai import OpenAi
+from openai import OpenAI
 
-client = OpenAi()
+client = OpenAI()
