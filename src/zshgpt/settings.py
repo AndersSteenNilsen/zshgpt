@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import Any, Dict, Optional, Tuple, Type, override
+from typing import Any, Dict, Optional, Tuple, Type
 
 from pydantic import model_validator
 from pydantic.fields import FieldInfo
@@ -20,7 +20,6 @@ class JsonConfigSettingsSource(
     when reading `config.json`
     """
 
-    @override
     def get_field_value(self, field: FieldInfo, field_name: str) -> Tuple[Any, str, bool]:
         if not JSON_PATH.exists():
             return None, field_name, False
@@ -29,7 +28,6 @@ class JsonConfigSettingsSource(
         field_value = file_content_json.get(field_name)
         return field_value, field_name, False
 
-    @override
     def prepare_field_value(self, field_name: str, field: FieldInfo, value: Any, value_is_complex: bool) -> Any:
         return value
 
@@ -59,7 +57,6 @@ class Settings(BaseSettings):
         return self
 
     @classmethod
-    @override
     def settings_customise_sources(
         cls,
         settings_cls: Type[BaseSettings],
