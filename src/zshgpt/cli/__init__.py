@@ -5,8 +5,7 @@ import click
 from openai import AuthenticationError
 
 from zshgpt.__about__ import __version__
-from zshgpt.cli.messages import messages
-from zshgpt.util.client import client
+from zshgpt.util.assistant import send_message
 
 
 @click.group(context_settings={'help_option_names': ['-h', '--help']}, invoke_without_command=True)
@@ -14,9 +13,7 @@ from zshgpt.util.client import client
 @click.argument('user_query')
 def zshgpt(user_query: str) -> str:
     try:
-        response = client.ChatCompletion.create(
-            model='gpt-3.5-turbo', messages=[*messages, {'role': 'user', 'content': user_query}]
-        )
+        response: str = send_message(user_query)
     except AuthenticationError as auth_error:
         raise click.ClickException(auth_error.user_message) from auth_error
-    click.echo(response['choices'][0]['message']['content'], nl=False)
+    click.echo(response)

@@ -47,6 +47,7 @@ class Settings(BaseSettings):
     model: str = 'gpt-3.5-turbo'
     assistant_name: str = 'ZSHGPT'
     assistant_id: Optional[str] = None
+    thread_id: Optional[str] = None
 
     @model_validator(mode='after')
     def update_json(self) -> 'Settings':
