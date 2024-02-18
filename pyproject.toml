@@ -20,6 +20,7 @@ classifiers = [
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
   "License :: OSI Approved :: MIT License",
@@ -57,7 +58,7 @@ cov = [
 ]
 
 [[tool.hatch.envs.all.matrix]]
-python = ["3.8", "3.9", "3.10", "3.11"]
+python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
 
 [tool.hatch.version]
@@ -73,19 +74,17 @@ version-file = "src/zshgpt/__about__.py"
 [tool.hatch.envs.lint]
 detached = true
 dependencies = [
-  "black>=23.1.0",
   "mypy>=1.0.0",
-  "ruff>=0.0.243",
+  "ruff>=0.2.2",
 ]
 [tool.hatch.envs.lint.scripts]
 typing = "mypy --install-types --non-interactive {args:src/zshgpt tests}"
 style = [
   "ruff {args:.}",
-  "black --check --diff {args:.}",
 ]
 fmt = [
-  "black {args:.}",
-  "ruff --fix {args:.}",
+  "ruff check --fix {args:.}",
+  "ruff format {args:.}",
   "style",
 ]
 all = [
@@ -101,7 +100,7 @@ skip-string-normalization = true
 [tool.ruff]
 target-version = "py38"
 line-length = 120
-select = [
+lint.select = [
   "A",
   "ARG",
   "B",
@@ -113,7 +112,7 @@ select = [
   "FBT",
   "I",
   "ICN",
-  "ISC",
+  #"ISC",
   "N",
   "PLC",
   "PLE",
@@ -128,7 +127,7 @@ select = [
   "W",
   "YTT",
 ]
-ignore = [
+lint.ignore = [
   # Allow non-abstract empty methods in abstract base classes
   "B027",
   # Allow boolean positional values in function calls, like `dict.get(... True)`
@@ -138,21 +137,24 @@ ignore = [
   # Ignore complexity
   "C901", "PLR0911", "PLR0912", "PLR0913", "PLR0915",
 ]
-unfixable = [
+lint.unfixable = [
   # Don't touch unused imports
   "F401",
 ]
 
-[tool.ruff.isort]
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.ruff.lint.isort]
 known-first-party = ["zshgpt"]
 
-[tool.ruff.flake8-tidy-imports]
+[tool.ruff.lint.flake8-tidy-imports]
 ban-relative-imports = "all"
 
-[tool.ruff.flake8-quotes]
+[tool.ruff.lint.flake8-quotes]
 inline-quotes = "single"
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 # Tests can use magic values, assertions, and relative imports
 "tests/**/*" = ["PLR2004", "S101", "TID252"]
 
