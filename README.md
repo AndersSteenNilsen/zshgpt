@@ -24,7 +24,7 @@ Made into a oh-my-zsh plugin.
 In your zsh console, type a question, starting with comment sign `#`, hit `ctrl+g` and get an answer.
 
 > [!TIP]
-> New in v. 1.1.1 Use doble `##` to use gpt-4 model.
+> New in v. 1.2.0 Use doble `##` to use gpt-4 model.
 
 ```bash
 # Who edited README.MD last according to git history?
