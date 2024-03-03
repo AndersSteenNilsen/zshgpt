@@ -48,9 +48,14 @@ If asked a question that will not resolve in a command, GPT is instructed to use
 ## Installing zshgpt
 First install zshgpt application, then [add the plugin](#adding-plugin).
 ### Prerequisite
-* ⚠️ Valid Openai API-key ⚠️
-    * make sure to save under `OPENAI_API_KEY` env.
-    * `export OPENAI_API_KEY='sk-...'`
+> [!WARNING]
+> Valid Openai API-key
+>
+> make sure to save under `OPENAI_API_KEY` env.
+> ```bash
+> export OPENAI_API_KEY='sk-...'
+> ```
+>
 
 ### With snap
 Snap comes preinstalled and is probalby the fastest way if you are on Linux and do not want to use pipx.
