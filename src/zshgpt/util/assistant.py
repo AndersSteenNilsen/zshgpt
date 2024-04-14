@@ -51,6 +51,7 @@ def get_or_create_thread() -> str:
 
     new_thread = client.beta.threads.create(messages=messages)
     settings.thread_id = new_thread.id
+    Settings.model_validate(settings)
     return new_thread.id
 
 
