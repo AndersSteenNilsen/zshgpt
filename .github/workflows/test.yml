@@ -36,4 +36,4 @@ jobs:
       run: hatch run lint:style
 
     - name: Run tests
-      run: hatch run cov
+      run: hatch run cli_test
