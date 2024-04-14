@@ -23,6 +23,10 @@ Heavily inspired by the abandoned project [https://github.com/microsoft/Codex-CL
 Made into a oh-my-zsh plugin.
 
 In your zsh console, type a question, starting with comment sign `#`, hit `ctrl+g` and get an answer.
+
+> [!TIP]
+> New in v. 1.1.1 Use doble `##` to use gpt-4 model.
+
 ```bash
 # Who edited README.MD last according to git history?
 ```
@@ -95,7 +99,7 @@ exec zsh # Reload zsh
 * [Oh My Zsh](https://ohmyz.sh/)
 ```zsh
 mkdir $ZSH_CUSTOM/plugins/zshgpt
-curl https://raw.githubusercontent.com/AndersSteenNilsen/zshgpt/main/zsh_plugin.zsh -o $ZSH_CUSTOM/plugins/zshgpt/zshgpt.plugin.zsh
+curl https://raw.githubusercontent.com/AndersSteenNilsen/zshgpt/main/zshgpt.plugin.zsh -o $ZSH_CUSTOM/plugins/zshgpt/zshgpt.plugin.zsh
 ```
 Then add zshgpt in your list of plugins in `~/.zshrc`
 
