@@ -8,7 +8,7 @@ def model_selection(user_query: str) -> str:
         case '#':
             return 'gpt-3.5-turbo'
         case '##':
-            return 'gpt-4'
+            return 'gpt-4-turbo'
         case _:
             return 'gpt-3.5-turbo'
 
