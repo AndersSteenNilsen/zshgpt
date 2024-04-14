@@ -6,4 +6,5 @@ import sys
 if __name__ == '__main__':
     from zshgpt.cli import zshgpt
 
-    sys.exit(zshgpt())
+    user_arg = sys.argv[1]
+    sys.exit(zshgpt(user_arg))
