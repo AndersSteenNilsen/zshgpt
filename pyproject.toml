@@ -36,7 +36,7 @@ Source = "https://github.com/AndersSteenNilsen/zshgpt"
 zshgpt = "zshgpt.cli:zshgpt"
 
 [tool.hatch.envs.default]
-dependencies = ["coverage[toml]>=6.5", "pytest", "pre-commit"]
+dependencies = ["coverage[toml]>=6.5", "pytest", "pre-commit", "pytest-env"]
 
 [tool.hatch.envs.default.scripts]
 test = "pytest {args:tests}"
@@ -82,6 +82,9 @@ all = [
 [tool.pytest.ini_options]
 markers = [
   "need_OPENAI_API_KEY: Test needs an OPENAI_API_KEY to work, do not run in CI/CD."
+]
+env = [
+  "OPENAI_API_KEY=WrongKey",
 ]
 
 [tool.ruff]

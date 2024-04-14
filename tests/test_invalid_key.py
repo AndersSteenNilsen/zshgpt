@@ -1,10 +1,7 @@
-from os import environ
-
 from click.testing import CliRunner
 
 
 def test_invalid_key():
-    environ['OPENAI_API_KEY'] = 'WRONG_KEY'
     from src.zshgpt.cli import zshgpt
 
     runner = CliRunner()
