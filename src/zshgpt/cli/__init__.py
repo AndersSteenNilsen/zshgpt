@@ -15,5 +15,5 @@ def zshgpt(user_query: str) -> str:
     try:
         response: str = send_message(user_query)
     except AuthenticationError as auth_error:
-        raise click.ClickException(auth_error.user_message) from auth_error
+        raise click.ClickException(auth_error.message) from auth_error
     click.echo(response)
