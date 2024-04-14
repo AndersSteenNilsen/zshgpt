@@ -2,7 +2,8 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/zshgpt.svg)](https://pypi.org/project/zshgpt)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/zshgpt.svg)](https://pypi.org/project/zshgpt)
 [![zshgpt](https://snapcraft.io/zshgpt/badge.svg)](https://snapcraft.io/zshgpt)
-
+[![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)
+[![linting - Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 # zshgpt
 
 -----
@@ -126,6 +127,13 @@ omz reload
 zplug "AndersSteenNilsen/zshgpt"
 zplug load
 ```
+
+## Dev setup
+
+* `pipx install hatch` More information: [https://hatch.pypa.io/dev/install/](https://hatch.pypa.io/dev/install/)
+* `hatch shell`
+    * You now should have everything installed.
+
 
 ## LOGO
 *Made with DALL-E*
